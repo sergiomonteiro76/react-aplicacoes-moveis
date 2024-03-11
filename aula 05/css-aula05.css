@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: none;
+}
+
+.mainAfter::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(194, 193, 193);
+    opacity: 0.8;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: ease-in-out;
+}
+
+/* user input tasks style */
+
+form{
+    width: 90%;
+    margin: 50px auto;
+    text-align: center;
+}
+form input,
+form button,
+#save,
+#cancel{
+    border-radius: 30px;
+    box-shadow: none;
+    border: none;
+}
+
+form input{
+    padding: 13px 20px;
+    margin-right: 2.7rem;
+    width: 58%;
+    background-color: #eee;
+}
+
+form input,
+form input::placeholder{
+    letter-spacing: 0.7px;
+}
+
+form button,
+#save{
+    padding: 13px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-image: linear-gradient(90deg, gold, lightseagreen);
+    color: #fff;
+}
+
+#cancel{
+    padding: 13px 20px;
+    margin-right: 1%;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid lightseagreen;
+    color: lightseagreen;
+}
+
+/* the four sections style */
+
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+#container section{
+    width: 23%;
+    border: 3px solid #eee;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.tasksSection{
+    height: 60vh;
+    width: 100%;
+}
+
+#container section h2{
+    text-align: center;
+    padding: 15px;
+    margin: 0 0 5px 0;
+}
+
+.green,
+#Approved li {
+    background-color: greenyellow;
+    color: #fff;
+}
+.red,
+#hold li{
+    background-color: crimson;
+    color: #fff; 
+}
+.gold,
+#inProgress li{
+    background-color: gold;
+    color: #fff; 
+}
+.blue,
+#review li{
+    background-color: lightseagreen;
+    color: #fff;  
+}
+li{
+    width: fit-content;
+    padding: 20px;
+    list-style: none;
+    text-align: center;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+/* list options buttons */
+
+li p{
+    display: flex;
+    align-items: center;
+}
+
+li p span{
+    margin-right: 20%;
+}
+
+.listOptionsWrapper{
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    border: 0.5px solid;
+    display: none;
+}
+
+.listOptionsWrapper button{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    color: #333;
+}
+
+.listOptionsWrapper button:first-child{
+    border-bottom: 0.5px solid;
+}
+
+/* list options border colors */
+
+#inProgress .listOptionsWrapper,
+#inProgress .listOptionsWrapper button{
+    border-color: gold;
+}
+
+#hold .listOptionsWrapper,
+#hold .listOptionsWrapper button{
+    border-color: crimson;
+}
+
+#review .listOptionsWrapper,
+#review .listOptionsWrapper button{
+    border-color: lightseagreen;
+}
+
+#Approved .listOptionsWrapper,
+#Approved .listOptionsWrapper button{
+    border-color: greenyellow;
+}
+
+/* descrition box style */
+
+#descrpContainer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: 0px -8px 20px rgb(165, 164, 164);
+    max-height: 0;
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-fill-mode: ease-in-out;
+}
+
+#descrpWrapper{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10vh 0;
+    z-index: 100;
+}
+
+#description{
+    border: none;
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 10vh;
+    padding: 3vh;
+    background-color: #eee;
+}
+
+#description,
+#description::placeholder{
+    font-size: 1rem;
+}
+
+/* animation to desplay decription box */
+
+@keyframes show{
+    100%{
+        max-height: 90vh;
+    }
+}
+
+@keyframes hide{
+    100%{
+        max-height: 0;
+    }
+}
+
+@keyframes fadeIn{
+    100%{
+        opacity: 0.8;
+    }
+}
+
+@keyframes fadeOut{
+    100%{
+        opacity: 0;
+    }
+}
