@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.app {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.produto {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+}
+
+.produto img {
+  max-width: 100%;
+  height: auto;
+}
+
+.promocao {
+  color: red;
+  font-weight: bold;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.carrinho, .promocoes {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  width: 300px;
+}
